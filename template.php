@@ -1,84 +1,10 @@
-<?php
-
-# Settings
-$sku = 'caps900';
-$product_id = '793';
-$price = '79.99';
-$sale_price = '71.99';
-$discount = '10%';
-$title = 'CBD Hemp Oil Capsules 900 MG of CBD';
-$coupon = 'Y2FwczkwMA';
-$href_root = 'https://elixinol.com/checkout/';
-include_once('./utils.php');
-$utils = new Utils();
-
-$product = [
-    'front' => [
-        'image' => [
-            'src' => 'assets/' . $sku . '.png'
-        ],
-        'title' => 'CBD Hemp Oil Capsules',
-        'subtitle' => 'Serving suggestion',
-        'desc' => 'A 60-capsule container of Elixinol™ contains a total of 900 mg of CBD. The suggested serving is one CBD capsule daily which will provide many valuable nutrients and cannabinoids, including 15 mg of CBD. We recommend a daily regimen so that you are taking your CBD capsules at approximately the same time each day. CBD capsules are easy for you to consume, without taste, providing convenient and permit controlled dosage. Our CBD oil capsules have a higher potency than our tinctures, Respira CBD and topical products.'
-    ],
-    'back' => [
-        'image' => [
-            'src' => 'assets/' . $sku . '-back.png'
-        ],
-        'title' => 'Supplement Facts',
-        'serving_size' => '1 capsule',
-        'servings_per_bottle' => '60',
-        'hemp' => '30 mg*',
-        'cbd' => '15 mg*',
-        'star' => 'No Daily Value Set. CBD Naturally occurs in Hemp oil.',
-        'ingredients' => 'MCT Oil (Naturally Extracted from Coconut Oil), Vegetarian Capsules (Vegetable Cellulose, Purified Water), Silica. <br>Contains: Coconut',
-        'directions' => 'Take twice daily with food or as needed.',
-        'storage' => 'Avoid excessive heat, light and humidity.',
-        'safety' => 'Use only if the tamper-evident seal is intact.'
-    ]
-];
-
-$conf = [
-    'lead' => [
-        'bgcolor' => '#ffffff',
-        'image' => [
-            'src' => 'assets/' . $sku . '.png'
-        ],
-        'title' => $title,
-        'desc' => 'With a consistent amount of CBD in easy-to-swallow capsules, our Elixinol hemp extract capsules ensure you enjoy the peace of mind that comes with getting the precise amount of CBD, every time. Made with natural ingredients, our CBD capsules are perfect for those who prefer a no-taste, more discreet CBD experience. Our CBD Capsules are one of the most convenient ways to make full-spectrum CBD extract a part of your daily routine-with a much higher single-serving potency.',
-        'bullets' => [
-            'Consistent CBD' => '15 mg of CBD and 30 mg of hemp extract per capsule',
-            'Full-spectrum' => 'Our 100% organic hemp cannabinoid extract captures the full spectrum of cannabinoids, flavonoids, and terpenes',
-            'Pure and potent compounds' => 'Organic hemp CO2 extracted in a chemical-free process for maximum purity and quality.',
-            'Other natural compounds retained in our whole food extract include:' => 'nitrogenous compounds, amino acids, ketones, flavonoids, glycosides, omega fatty acids, chlorophyll, and a variety of natural vitamins and nutrients'
-        ],
-    ],
-    'logobar' => $utils->get_logobar(),
-    'produced' => [
-        'bgimg' => ($utils->is_device() ? 'background-color: #FDF5DE;' : 'background-image: url(assets/family-stroll.jpg);'),
-        'title' => 'How our CBD Capsules are produced',
-        'desc' => 'Elixinol™ produces a whole-plant hemp-oil extract, derived from specially bred, organically grown industrial hemp plants with a high cannabidiol (CBD) content.  Our hemp oil extract is non-synthetic and wholesome. We apply a supercritical fluid extraction method which uses CO2 and no harmful chemicals in the process.  It contains all the synergistic cannabinoids, terpenoids, essential oils and other compounds in the original plant. All the hemp we grow and use in your capsules is non-GMO industrial hemp which is grown in the USA.  Our CBD capsules contain a full spectrum of terpenes, phytocannabinoids and other important compounds found in the original plant.'
-    ],
-    'doctor' => $utils->get_doctor(),
-    'buyblock' => $utils->get_buyblock($sku, $title, $price, $sale_price, $discount, $href_root, $product_id, $coupon),
-    'guarantee' => $utils->get_guarantee(),
-    'certs' => $utils->get_certs(),
-    'mission' => $utils->get_mission(),
-    'nonprofits' => $utils->get_nonprofits(),
-    'product' => $product,
-    'buyblock2' => $utils->get_buyblock($sku, $title, $price, $sale_price, $discount, $href_root, $product_id, $coupon),
-    'disclaimer' => $utils->get_disclaimer()
-];
-
-# Build Page
-?>
 <html>
 <head>
     <title><?php print $title; ?> | Elixinol</title>
     <style><?php print file_get_contents('./assets/style.css'); ?></style>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
 </head>
-<body class="caps900">
+<body class="tnat300">
 
     <div id="page"><div class="inner">
         <!-- Lead -->
@@ -104,7 +30,7 @@ $conf = [
         </div></div>
 
         <!-- Produced -->
-        <div id="produced" class="tile" style="<?php print $conf['produced']['bgimg']; ?>"><div class="inner">
+        <div id="produced" class="tile dark" style="<?php print $conf['produced']['bgimg']; ?>"><div class="inner">
             <h2><?php print $conf['produced']['title']; ?></h2>
             <p><?php print $conf['produced']['desc']; ?></p>
         </div></div>

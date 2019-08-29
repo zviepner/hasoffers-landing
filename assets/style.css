@@ -57,6 +57,9 @@ label {
     clear: both;
     padding: 4rem 0;
 }
+.tile.dark {
+    color: #fff;
+}
 
 #logobar.tile {
     padding: 2rem 0;
@@ -138,7 +141,7 @@ ul, li {
 }
 
 #produced {
-    min-height: 1000px;
+    min-height: 900px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 100%;
