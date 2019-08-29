@@ -1,0 +1,329 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+}
+.strong {
+    font-weight: 700;
+}
+.left, .leftbox {
+    float: left;
+    max-width: 40%;
+}
+.left {
+    clear: left;
+}
+.leftbox {
+    padding-left: 2rem;
+}
+.right {
+    float: right;
+}
+.center {
+    text-align: center;
+}
+.clear {
+    clear: both;
+}
+img {
+    max-width: 100%;
+}
+.bggray {
+    /* background-color: #ddd; */
+    padding: 2rem;
+    background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0), #eee, #eee);
+}
+.bgwhite {
+    background-color: #fff;
+    border: 40px solid #fff;
+}
+.m0 {
+    margin: 0;
+}
+.p0 {
+    padding: 0;
+}
+figcaption {
+    font-size: 1.4rem;
+}
+label {
+    font-weight: bold;
+}
+.bggreen {
+    background-color: #31ad0f;
+}
+.tile {
+    clear: both;
+    padding: 4rem 0;
+}
+
+#logobar.tile {
+    padding: 2rem 0;
+}
+
+.tile .inner {
+    max-width: 960px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+h1 {
+    text-align: center;
+}
+h1, h2, h3 {
+    font-weight: 400;
+}
+
+ul, li {
+    list-style-position: outside;
+}
+.mhimg img {
+    max-height: 220px;
+}
+.mtp {
+    margin-top: 5rem;
+    padding-right: 1rem;
+}
+@media only screen and (max-width: 1000px) {
+    .tile .inner {
+        padding: 4rem;
+    }
+    #logobar.tile .inner {
+        padding: 0 1rem;
+    }
+    h1 {
+        text-align: unset;
+        font-size: 4rem;
+    }
+    .left, .leftbox {
+        max-width: unset;
+        float: none;
+        text-align: left;
+    }
+    #lead .left {
+        max-width: unset;
+        float: right;
+    }
+    .leftbox {
+        padding-left: unset;
+    }
+    .mhimg img {
+        float: right;
+    }
+    .mtp {
+        margin-top: unset;
+        clear: left;
+        max-width: unset;
+        margin: auto;
+    }
+}
+#lead .left {
+    max-width: 35%;
+}
+#lead .leftbox {
+    max-width: 50%;
+}
+#lead ul {
+    margin-top: 2rem;
+}
+#lead li {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+#nonprofits {
+    text-align: center;
+}
+
+#produced {
+    min-height: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 100%;
+}
+#produced .inner p {
+    padding-right: 50%;
+}
+@media only screen and (max-width: 1000px) {
+    .tile {
+        padding: 1rem;
+    }
+    #lead .leftbox {
+        max-width: unset;
+        text-align: unset;
+    }
+    #produced {
+        background: none;
+    }
+    #produced .inner p {
+        padding-right: unset;
+    }
+}
+
+#mission {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+#mission .inner {
+    padding: 2rem;
+}
+#mission .logo {
+    margin-bottom: 0;
+}
+#mission h2 {
+    margin-top:0;
+    padding-top:0;
+}
+#mission h3 {
+    max-width: 75%;
+    margin: 2rem auto;
+}
+@media only screen and (max-width: 1000px) {
+    #mission .inner {
+        padding: 4rem;
+    }
+    #mission h3 {
+        max-width: unset;
+        margin: 2rem auto;
+    }   
+}
+#doctor h2 {
+    background-color: #3773b9;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+#doctor h3 {
+    font-size: 1.4rem;
+}
+#doctor figure {
+    max-width: 30%; 
+}
+.buyblock.tile {
+    max-width: 400px;
+    margin: auto;
+    border: 3px solid #bbb;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+}
+@media only screen and (max-width: 1000px) {
+    #doctor figure {
+        float: right;
+    }
+}
+.buyblock .inner {
+    padding: 0;
+    text-align: center;
+}
+.buyblock .leftbox {
+    text-align: center;
+    padding-top: 1rem;
+}
+.buyblock .tagline {
+    text-transform: uppercase;
+    background-color: #ffaf1a;
+    padding: 2px 10px;
+    color: #000;
+    font-weight: bold;
+}
+.buyblock .sale_price {
+    color: #ff0000;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+.buyblock p {
+    margin: 0;
+}
+.buyblock img {
+    max-height: 200px;
+    text-align: center;
+}
+.buyblock .tagline,
+.buyblock .cta a {
+    display: block;
+    padding: 1rem 2rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+.buyblock .tagline {
+    padding: 0;
+    color: unset;
+}
+@media only screen and (max-width: 1000px) {
+    .buyblock.tile {
+        max-width: 75%;
+    }
+    .buyblock .left {
+        text-align: center;
+    }
+    .buyblock .tagline,
+    .buyblock .cta a {
+        margin: 0 4rem;
+    }
+    .buyblock img {
+        max-height: unset;
+    }
+}
+#guarantee figure {
+    padding: 0;
+}
+#guarantee figure.left {
+    max-width: 52%;
+}
+#guarantee .leftbox {
+    text-align: center;
+}
+#guarantee h2,
+#nonprofits h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+#guarantee h5 {
+    font-size: 85%;
+    margin: 0;
+}
+#guarantee .seal30 {
+    width: 75%;
+    margin: auto;
+}
+#nonprofits .inner {
+    padding: 4rem 20%;
+}
+#guarantee .left {
+    margin: auto;
+    text-align: right;
+}
+@media only screen and (max-width: 1000px) {
+    #nonprofits .inner {
+        padding: 2rem;
+    }
+}
+#nonprofits p {
+    font-size: 1.4rem;
+}
+#disclaimer,
+#product #back {
+    font-size: 85%;
+}
+#product #back {
+    clear: left;
+}
+#product #front figure img {
+    max-width: 60%;
+}
+#product #back .leftbox {
+    margin-top: 4rem;
+}
+@media only screen and (max-width: 1000px) {
+    #product #front figure img {
+        max-width: 240px;
+    }
+}

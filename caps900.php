@@ -9,6 +9,9 @@ $discount = '10%';
 $title = 'CBD Hemp Oil Capsules 900 MG of CBD';
 $coupon = 'Y2FwczkwMA';
 $href_root = 'https://elixinol.com/checkout/';
+$useragent = $_SERVER['HTTP_USER_AGENT'];
+
+$is_device = (preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i',$useragent)||preg_match('/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i',substr($useragent,0,4)));
 
 $buyblock = [
     'image' => [
@@ -72,7 +75,7 @@ $conf = [
         ]
     ],
     'produced' => [
-        'bgimg' => 'assets/family-stroll.jpg',
+        'bgimg' => ($is_device ? 'background-color: #FDF5DE;' : 'background-image: url(assets/family-stroll.jpg);'),
         'title' => 'How our CBD Capsules are produced',
         'desc' => 'Elixinol™ produces a whole-plant hemp-oil extract, derived from specially bred, organically grown industrial hemp plants with a high cannabidiol (CBD) content.  Our hemp oil extract is non-synthetic and wholesome. We apply a supercritical fluid extraction method which uses CO2 and no harmful chemicals in the process.  It contains all the synergistic cannabinoids, terpenoids, essential oils and other compounds in the original plant. All the hemp we grow and use in your capsules is non-GMO industrial hemp which is grown in the USA.  Our CBD capsules contain a full spectrum of terpenes, phytocannabinoids and other important compounds found in the original plant.'
     ],
@@ -104,7 +107,7 @@ $conf = [
     'mission' => [
         'bgcolor' => '#3773b9',
         'logo' => [
-            'src' => 'assets/eleixinol-white.png'
+            'src' => 'assets/elixinol-white.png'
         ],
         'title' => 'The world\'s most trusted CBD brand.',
         'image' => [
@@ -133,40 +136,8 @@ $conf = [
 ?>
 <html>
 <head>
-    <style>
-        body {
-            margin: 0;
-        }
-
-        .left {
-            float: left;
-            clear: left;
-            max-width: 50%;
-        }
-        .right {
-            float: right;
-        }
-
-        .tile {
-            clear: both;
-        }
-
-        .tile .inner {
-            max-width: 960px;
-            margin: auto;
-        }
-
-        #nonprofits {
-            text-align: center;
-        }
-
-        #produced {
-            min-height: 1000px;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-    </style>
+    <style><?php print file_get_contents('./assets/style.css'); ?></style>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -175,12 +146,17 @@ $conf = [
         <div id="lead" class="tile" style="background-color: <?php print $conf['lead']['bgcolor']; ?>"><div class="inner">
             <h1><?php print $conf['lead']['title']; ?></h1>
             <div>
-                <img class="side left" src="<?php print $conf['lead']['image']['src']; ?>"/>
-                <p><?php print $conf['lead']['desc']; ?></p>
-                <ul>
-                <?php foreach ($conf['lead']['bullets'] as $k => $v) : print '<li><strong>' . $k . '.</strong> ' . $v . '</li>'; endforeach; ?>
-                </ul>
+                <figure class="left">
+                    <img class="side" src="<?php print $conf['lead']['image']['src']; ?>"/>
+                </figure>
+                <div class="leftbox">
+                    <p><?php print $conf['lead']['desc']; ?></p>
+                    <ul>
+                    <?php foreach ($conf['lead']['bullets'] as $k => $v) : print '<li><span class="strong">' . $k . '.</span> ' . $v . '</li>'; endforeach; ?>
+                    </ul>
+                </div>
             </div>
+            <br class="clear" />
         </div></div>
 
         <!-- LogoBar -->
@@ -189,42 +165,50 @@ $conf = [
         </div></div>
 
         <!-- Produced -->
-        <div id="produced" class="tile" style="background-image: url(<?php print $conf['produced']['bgimg']; ?>)"><div class="inner">
+        <div id="produced" class="tile" style="<?php print $conf['produced']['bgimg']; ?>"><div class="inner">
             <h2><?php print $conf['produced']['title']; ?></h2>
             <p><?php print $conf['produced']['desc']; ?></p>
         </div></div>
 
         <!-- Doctors Corner -->
         <div id="doctor" class="tile"><div class="inner">
-            <figure class="left">
+            <figure class="left bgwhite">
                 <img src="<?php print $conf['doctor']['image']['src']; ?>" />
                 <figcaption><?php print $conf['doctor']['image']['caption']; ?></figcaption>
             </figure>
             <h2><?php print $conf['doctor']['title']; ?></h2>
             <h3><?php print $conf['doctor']['subtitle']; ?></h3>
             <p><?php print $conf['doctor']['desc']; ?></p>
+            <h2>&nbsp;</h2>
+            <br class="clear"/>
         </div></div>
 
         <!-- Buy Block -->
         <div id="buyblock1" class="buyblock tile"><div class="inner">
             <h2><?php print $conf['buyblock']['title']; ?></h2>
-            <figure class="left">
+            <figure class="left m0 p0">
                 <img src="<?php print $conf['buyblock']['image']['src']; ?>" />
             </figure>
-            <p class="tagline"><?php print $conf['buyblock']['tagline']; ?></p>
-            <p><?php print $conf['buyblock']['price']; ?></p>
-            <p><?php print $conf['buyblock']['sale_price']; ?></p>
-            <p class="cta"><a href="<?php print $conf['buyblock']['cta']['link']; ?>"><?php print $conf['buyblock']['cta']['text']; ?></a></p>
+            <div class="leftbox">
+                <p class="tagline"><?php print $conf['buyblock']['tagline']; ?></p>
+                <p class="price"><?php print $conf['buyblock']['price']; ?></p>
+                <p class="sale_price m0 p0">$<?php print $conf['buyblock']['sale_price']; ?></p>
+                <p class="cta"><a class="bggreen" href="<?php print $conf['buyblock']['cta']['link']; ?>"><?php print $conf['buyblock']['cta']['text']; ?></a></p>
+            </div>
+            <br class="clear"/>
         </div></div>
 
         <!-- Guarantee -->
-        <div id="guarantee" class="tile"><div class="inner">
+        <div id="guarantee" class="tile bggray"><div class="inner">
             <figure class="left">
                 <img src="<?php print $conf['guarantee']['hero']['src']; ?>" />
             </figure>
-            <h2><?php print $conf['guarantee']['title']; ?></h2>
-            <h5><?php print $conf['guarantee']['subtitle']; ?></h5>
-            <p><img src="<?php print $conf['guarantee']['image']['src']; ?>" /></p>
+            <div class="leftbox center">
+                <h2><?php print $conf['guarantee']['title']; ?></h2>
+                <h5><?php print $conf['guarantee']['subtitle']; ?></h5>
+                <p class="seal30"><img src="<?php print $conf['guarantee']['image']['src']; ?>" /></p>
+            </div>
+            <br class="clear"/>
         </div></div>
 
         <!-- Certifications -->
@@ -233,15 +217,18 @@ $conf = [
         </div></div>
 
         <!-- Mission -->
-        <div id="mission" class="tile" style="background-color: <?php print $conf['mission']['bgcolor']; ?>"><div class="inner">
-            <figure class="left">
+        <div id="mission" class="tile"><div class="inner" style="background-color: <?php print $conf['mission']['bgcolor']; ?>">
+            <figure class="center logo">
                 <img src="<?php print $conf['mission']['logo']['src']; ?>" />
             </figure>
-            <h2><?php print $conf['mission']['title']; ?></h2>
-            <figure class="left">
+            <h2 class="center"><?php print $conf['mission']['title']; ?></h2>
+            <h3><?php print $conf['mission']['desc']; ?></h3>
+            <figure class="left mhimg">
                 <img src="<?php print $conf['mission']['image']['src']; ?>" />
             </figure>
-            <p><?php print $conf['mission']['desc']; ?></p>
+            <p class="mtp"><?php print $conf['mission']['body']; ?></p>
+            <br class="clear"/>
+            
         </div></div>
 
         <!-- nonprofits -->
@@ -249,7 +236,7 @@ $conf = [
             <p><img src="<?php print $conf['nonprofits']['logo']['src']; ?>" /></p>
             <h2><?php print $conf['nonprofits']['title']; ?></h2>
             <p><?php print $conf['nonprofits']['desc']; ?></p>
-            <figure class="left">
+            <figure>
                 <img src="<?php print $conf['nonprofits']['image']['src']; ?>" />
             </figure>
         </div></div>
@@ -264,39 +251,45 @@ $conf = [
                 <h3><?php print $conf['product']['front']['subtitle']; ?></h3>
                 <p><?php print $conf['product']['front']['desc']; ?></p>
             </div>
+            <br class="clear"/>
             <div id="back">
                 <figure class="left">
                     <img src="<?php print $conf['product']['back']['image']['src']; ?>" />
                 </figure>
-                <h2><?php print $conf['product']['back']['title']; ?></h2>
-                <p class="serving_size"><label>Serving Size:</label> <?php print $conf['product']['back']['serving_size']; ?></p>
-                <p class="servings_per_bottle"><label>Servings per Bottle:</label> <?php print $conf['product']['back']['servings_per_bottle']; ?></p>
-                <p class="hemp"><label>Hemp Extract:</label> <?php print $conf['product']['back']['hemp']; ?></p>
-                <p class="cbd"><label>Cannabidiol (CBD):</label> <?php print $conf['product']['back']['cbd']; ?></p>
-                <p class="star"><label>*</label> <?php print $conf['product']['back']['star']; ?></p>
-                <p class="ingredients"><label>Other Ingredients:</label> <?php print $conf['product']['back']['ingredients']; ?></p>
-                <p class="directions"><label>Directions:</label> <?php print $conf['product']['back']['directions']; ?></p>
-                <p class="storage"><label>Storage:</label> <?php print $conf['product']['back']['storage']; ?></p>
-                <p class="safety"><label>Safety:</label> <?php print $conf['product']['back']['safety']; ?></p>
+                <div class="leftbox">
+                    <h2><?php print $conf['product']['back']['title']; ?></h2>
+                    <p class="serving_size m0"><label>Serving Size:</label> <?php print $conf['product']['back']['serving_size']; ?></p>
+                    <p class="servings_per_bottle m0"><label>Servings per Bottle:</label> <?php print $conf['product']['back']['servings_per_bottle']; ?></p>
+                    <p class="hemp m0"><label>Hemp Extract:</label> <?php print $conf['product']['back']['hemp']; ?></p>
+                    <p class="cbd m0"><label>Cannabidiol (CBD):</label> <?php print $conf['product']['back']['cbd']; ?></p>
+                    <p class="star m0"><label>*</label> <?php print $conf['product']['back']['star']; ?></p>
+                    <p class="ingredients"><label>Other Ingredients:</label> <?php print $conf['product']['back']['ingredients']; ?></p>
+                    <p class="directions m0"><label>Directions:</label> <?php print $conf['product']['back']['directions']; ?></p>
+                    <p class="storage m0"><label>Storage:</label> <?php print $conf['product']['back']['storage']; ?></p>
+                    <p class="safety m0"><label>Safety:</label> <?php print $conf['product']['back']['safety']; ?></p>
+                </div>
             </div>
+            <br class="clear"/>
         </div></div>
 
         <!-- Buy Block 2 -->
         <div id="buyblock2" class="buyblock tile"><div class="inner">
             <h2><?php print $conf['buyblock2']['title']; ?></h2>
-            <figure class="left">
+            <figure class="left m0 p0">
                 <img src="<?php print $conf['buyblock2']['image']['src']; ?>" />
             </figure>
-            <p class="tagline"><?php print $conf['buyblock2']['tagline']; ?></p>
-            <p><?php print $conf['buyblock2']['price']; ?></p>
-            <p><?php print $conf['buyblock2']['sale_price']; ?></p>
-            <p class="cta"><a href="<?php print $conf['buyblock2']['cta']['link']; ?>"><?php print $conf['buyblock2']['cta']['text']; ?></a></p>
+            <div class="leftbox">
+                <p class="tagline"><?php print $conf['buyblock2']['tagline']; ?></p>
+                <p class="price"><?php print $conf['buyblock2']['price']; ?></p>
+                <p class="sale_price m0 p0">$<?php print $conf['buyblock2']['sale_price']; ?></p>
+                <p class="cta"><a class="bggreen" href="<?php print $conf['buyblock']['cta']['link']; ?>"><?php print $conf['buyblock']['cta']['text']; ?></a></p>
+            </div>
+            <br class="clear"/>
         </div></div>
 
         <!-- Disclaimer -->
         <div id="disclaimer" class="tile"><div class="inner">
-            <h2>Disclaimer</h2>
-            <p><?php print $conf['disclaimer']['desc']; ?></p>
+            <p><span class="strong">Disclaimer:</span> <?php print $conf['disclaimer']['desc']; ?></p>
         </div></div>
 
     </div></div> <!-- End Page Div -->
