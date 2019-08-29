@@ -9,8 +9,6 @@ $discount = '10%';
 $title = 'CBD Hemp Oil Capsules 900 MG of CBD';
 $coupon = 'Y2FwczkwMA';
 $href_root = 'https://elixinol.com/checkout/';
-$useragent = $_SERVER['HTTP_USER_AGENT'];
-
 include_once('./utils.php');
 $buyblock = get_buyblock($sku, $title, $price, $sale_price, $discount, $href_root, $product_id, $coupon);
 
@@ -123,6 +121,7 @@ $conf = [
 ?>
 <html>
 <head>
+    <title><?php print $title; ?> | Elixinol</title>
     <style><?php print file_get_contents('./assets/style.css'); ?></style>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
 </head>
